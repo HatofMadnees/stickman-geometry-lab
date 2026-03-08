@@ -19,22 +19,22 @@ is_jumping = False
 
 # This sets up the 'ink' and 'paper' for the text / Shapes 'SQUARE'
 font = pygame.font.SysFont("Arial", 48, bold=True)
-rect_label_text = font.render("RECTANGLE", True, (255, 255, 255))
+rect_label_text = font.render("RECTANGLE", True, (0, 0, 255))
 rect_label_rect = rect_label_text.get_rect(center=(960, 200)) # The 'hitbox' for the word
 is_dragging = False # The 'Switch' to tell if we are holding it
 
 # --- TRIANGLE LABEL SETUP ---
-tri_label_text = font.render("TRIANGLE", True, (255, 255, 255))
+tri_label_text = font.render("TRIANGLE", True, (0, 255, 0))
 tri_label_rect = tri_label_text.get_rect(center=(960,300)) # Start below
 is_dragging_tri = False
 
 # --- BOX LABEL SETUP ---
-box_label_text = font.render("SQUARE", True, (255, 255, 255))
+box_label_text = font.render("SQUARE", True, (255, 0, 0))
 box_label_rect = box_label_text.get_rect(center=(960,400))
 is_dragging_box = False
 
 # -- CIRCLE LABEL SETUP ---
-circle_label_text = font.render("CIRCLE", True, (255, 255, 255))
+circle_label_text = font.render("CIRCLE", True, (255, 165, 0))
 circle_label_rect = circle_label_text.get_rect(center=(960,600))
 is_dragging_circle = False
 
