@@ -91,6 +91,35 @@ while True:
             is_dragging_box = False
             is_dragging_circle = False
 
+        # --- SNAP LOGIC ---
+        if not is_dragging_box: # SQUARE
+            dist_x = abs(box_label_rect.centerx - (box_x + 100))
+            dist_y = abs(box_label_rect.centery - (box_y + 100))
+
+            if dist_x < 100 and dist_y < 100:
+                box_label_rect.center = (box_x + 100, box_y + 100)
+
+        if not is_dragging: # RECTANGLE
+            dist_x = abs(rect_label_rect.centerx - (rect_x + 150))
+            dist_y = abs(rect_label_rect.centery - (rect_y + 50))
+
+            if dist_x < 150 and dist_y < 50:
+                rect_label_rect.center = (rect_x + 150, rect_y + 50)
+
+        if not is_dragging_tri: # TRIANGLE
+            dist_x = abs(tri_label_rect.centerx - 300)
+            dist_y = abs(tri_label_rect.centery - 800)
+
+            if dist_x < 100 and dist_y < 100:
+                tri_label_rect.center = (300,800)
+
+        if not is_dragging_circle: # CIRCLE
+            dist_x = abs(circle_label_rect.centerx - circle_pos.x)
+            dist_y = abs(circle_label_rect.centery - circle_pos.y)
+
+            if dist_x < 80 and dist_y < 80:
+                circle_label_rect.center = (int(circle_pos.x), int(circle_pos.y))
+
 
     # Get the state of keys (this stays outside the event loop)
     keys = pygame.key.get_pressed()
